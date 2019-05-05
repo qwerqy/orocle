@@ -8,8 +8,9 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import { rhythm } from "../utils/typography"
+import Social from "./social"
 
 function Bio() {
   return (
@@ -24,24 +25,73 @@ function Bio() {
               marginBottom: rhythm(2.5),
             }}
           >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
+            <div
               style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`,
+                display: `flex`,
+                flexDirection: `column`,
               }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
-            />
-            <p>
-              Written by <strong>{author}</strong> who lives in Malaysia and is
-              currently working as a Software Engineer over at{" "}
-              <strong>Vase.ai</strong>.
-            </p>
+            >
+              <div
+                style={{
+                  display: `flex`,
+                  flexDirection: `row`,
+                }}
+              >
+                <Image
+                  fixed={data.avatar.childImageSharp.fixed}
+                  alt={author}
+                  style={{
+                    marginRight: rhythm(1 / 2),
+                    marginBottom: 0,
+                    minWidth: 50,
+                    borderRadius: `100%`,
+                  }}
+                  imgStyle={{
+                    borderRadius: `50%`,
+                  }}
+                />
+                <p style={{ marginBottom: "1rem" }}>
+                  Written by <strong>{author}</strong> who lives in Malaysia and
+                  is currently working as a Software Engineer over at{" "}
+                  <strong>
+                    <a href="https://vase.ai" target="_blank">
+                      Vase.ai
+                    </a>
+                  </strong>
+                  .
+                </p>
+              </div>
+              <div
+                style={{
+                  display: `flex`,
+                  flexDirection: `row`,
+                  justifyContent: "space-between",
+                }}
+              >
+                <Social />
+                <ThemeToggler>
+                  {({ theme, toggleTheme }) => (
+                    <label
+                      style={{
+                        marginBottom: rhythm(1.5),
+                        display: "flex",
+                        alignSelf: "center",
+                      }}
+                      className="switch"
+                    >
+                      <input
+                        type="checkbox"
+                        onChange={e =>
+                          toggleTheme(e.target.checked ? "dark" : "light")
+                        }
+                        checked={theme === "dark"}
+                      />
+                      <span className="slider round" />
+                    </label>
+                  )}
+                </ThemeToggler>
+              </div>
+            </div>
           </div>
         )
       }}
@@ -63,6 +113,7 @@ const bioQuery = graphql`
         author
         social {
           twitter
+          github
         }
       }
     }

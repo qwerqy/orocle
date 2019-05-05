@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://qwerqy,dev`,
     social: {
       twitter: `qwerqy_dev`,
+      github: `qwerqy`,
     },
   },
   plugins: [
@@ -82,5 +83,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-dark-mode`,
   ],
 }
