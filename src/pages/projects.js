@@ -15,11 +15,10 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="Home"
+          title="Projects"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />
-        <h3>Projects</h3>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -56,17 +55,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { fileAbsolutePath: { regex: "/(projects)/.*.md$/" } }
+    ) {
       edges {
         node {
           excerpt
           fields {
             slug
           }
+          id
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
             description
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }

@@ -18,7 +18,7 @@ class BlogIndex extends React.Component {
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
+        {/* <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -40,7 +40,8 @@ class BlogIndex extends React.Component {
               />
             </div>
           )
-        })}
+        })} */}
+        <h1>Coming Soon.</h1>
       </Layout>
     )
   }
@@ -55,17 +56,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { fileAbsolutePath: { regex: "/(blog)/.*.md$/" } }
+    ) {
       edges {
         node {
           excerpt
           fields {
             slug
           }
+          id
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
             description
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }
