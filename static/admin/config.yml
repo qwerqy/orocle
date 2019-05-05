@@ -1,5 +1,6 @@
 backend:
-  name: orocle
+  name: github
+  repo: qwerqy/orocle
 
 media_folder: static/assets
 public_folder: assets
