@@ -24,7 +24,7 @@ function Bio() {
               marginBottom: rhythm(2.5),
             }}
           >
-            {/* <Image
+            <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
               style={{
@@ -36,7 +36,7 @@ function Bio() {
               imgStyle={{
                 borderRadius: `50%`,
               }}
-            /> */}
+            />
             <p>
               Written by <strong>{author}</strong> who lives in Malaysia and is
               currently working as a Software Engineer over at{" "}
