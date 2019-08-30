@@ -2,6 +2,9 @@
 title: >-
   Implementing SSR to a production React (CRA) product (Part 2: Middleware &
   State Management)
+tags:
+  - react
+  - javascript
 date: 2019-02-24T09:47:46.794Z
 description: >-
   Hello guys, welcome back! This is part 2 of the guide series on how to implent
@@ -9,6 +12,7 @@ description: >-
   series, I showed you how I prepared the bootstrap file that will be the entry
   script to run our ...
 ---
+
 <p>Hello guys, welcome back! This is part 2 of the guide series on <strong>how to implement SSR</strong> to your ongoing production React product.</p>
 
 <h2>Recap</h2>

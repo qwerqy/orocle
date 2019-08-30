@@ -5,6 +5,7 @@ import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
+import { TagsList, Tag } from '../components/tags';
 
 class BlogPostTemplate extends React.Component<any> {
   render() {
@@ -23,12 +24,25 @@ class BlogPostTemplate extends React.Component<any> {
           style={{
             ...scale(-1 / 5),
             display: `block`,
-            marginBottom: rhythm(1),
             marginTop: rhythm(-1),
+            marginBottom: 0,
           }}
         >
           {post.frontmatter.date}
         </p>
+        <TagsList
+          style={{
+            marginBottom: '1rem',
+          }}
+        >
+          {post.frontmatter.tags.map((tag: string, i: number) => {
+            return (
+              <Tag key={i} _key={i} data={post.frontmatter.tags}>
+                {tag}
+              </Tag>
+            );
+          })}
+        </TagsList>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -82,6 +96,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        tags
         date(formatString: "MMMM DD, YYYY")
         description
       }

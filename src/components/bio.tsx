@@ -5,19 +5,19 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
-import { rhythm } from "../utils/typography"
-import Social from "./social"
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
+import { rhythm } from '../utils/typography';
+import Social from './social';
 
 function Bio() {
   return (
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social } = data.site.siteMetadata
+        const { author, social } = data.site.siteMetadata;
         return (
           <div
             style={{
@@ -50,9 +50,9 @@ function Bio() {
                     borderRadius: `50%`,
                   }}
                 />
-                <p style={{ marginBottom: "1rem" }}>
+                <p style={{ marginBottom: '1rem' }}>
                   Written by <strong>{author}</strong> who lives in Malaysia and
-                  is currently working as a Software Engineer over at{" "}
+                  is currently working as a Software Engineer over at{' '}
                   <strong>
                     <a href="https://vase.ai" target="_blank">
                       Vase.ai
@@ -65,11 +65,11 @@ function Bio() {
                 style={{
                   display: `flex`,
                   flexDirection: `row`,
-                  justifyContent: "space-between",
+                  justifyContent: 'space-between',
                 }}
               >
                 <Social />
-                <ThemeToggler>
+                {/* <ThemeToggler>
                   {({ theme, toggleTheme }) => (
                     <label
                       style={{
@@ -89,14 +89,14 @@ function Bio() {
                       <span className="slider round" />
                     </label>
                   )}
-                </ThemeToggler>
+                </ThemeToggler> */}
               </div>
             </div>
           </div>
-        )
+        );
       }}
     />
-  )
+  );
 }
 
 const bioQuery = graphql`
@@ -118,6 +118,6 @@ const bioQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Bio
+export default Bio;

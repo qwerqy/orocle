@@ -1,5 +1,7 @@
 ---
 title: Server to server communication using Socket.io for Battlev
+tags:
+  - node
 date: 2019-04-19T09:51:03.101Z
 description: >-
   Back to back communication. So to bring you guys up to speed, I've set up the
@@ -8,6 +10,7 @@ description: >-
   and within the endpoint, it will update the document based on the body of the
   request. All good and dandy, sounds like it's done. But not quite...
 ---
+
 <p><em><strong>Progress Update:&nbsp;</strong>Project Battlev is progressing just nicely. Already decided on what type of design I want for the interface, the color scheme. I've also converted my API server to Typescript for type checking. In this post I will try my best to share how I implemented my idea on how to make my API server and my Discord client server to communicate with each other using Sockets.</em></p>
 
 <h2>Back to back communication.</h2>

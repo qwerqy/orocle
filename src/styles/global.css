@@ -1,9 +1,10 @@
 body.light {
-  --bg: white;
+  --bg: #eceff4;
   --textNormal: #2e3440;
   --textTitle: #2e3440;
-  --textLink: #00b0ff;
-  --toggle: #00b0ff;
+  --textLink: #2e3440;
+  --textHover: #88c0d0;
+  --toggle: #88c0d0;
   --hr: hsla(0, 0%, 0%, 0.2);
 
   background-color: var(--bg);
@@ -16,6 +17,7 @@ body.dark {
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: white;
   --textLink: #00b0ff;
+  --textHover: #5e81ac;
   --toggle: white;
   --hr: hsla(0, 0%, 100%, 0.2);
 }
@@ -26,6 +28,16 @@ body.dark {
 
 a {
   color: var(--textLink);
+  transition: 0.5s;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--textHover);
+}
+
+p {
+  color: var(--textNormal);
 }
 
 h1,
@@ -34,4 +46,8 @@ h3,
 h4,
 h5 {
   color: var(--textTitle);
+}
+
+.big-title {
+  color: var(--bg);
 }

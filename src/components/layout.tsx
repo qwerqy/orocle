@@ -21,11 +21,15 @@ const Layout = (props: any) => {
         }}
       >
         <h1
+          className={'big-title'}
           style={{
             ...scale(1.8),
             marginBottom: rhythm(1.5),
             marginTop: 0,
             fontFamily: `Playfair Display, serif`,
+            letterSpacing: '3px',
+            textShadow:
+              '-1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000',
           }}
         >
           <Link
@@ -51,9 +55,13 @@ const Layout = (props: any) => {
         }}
       >
         <h3
+          className={'big-title'}
           style={{
             fontFamily: `Playfair Display, serif`,
             marginTop: 0,
+            letterSpacing: '3px',
+            textShadow:
+              '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
           }}
         >
           <Link
@@ -67,7 +75,7 @@ const Layout = (props: any) => {
             {title}
           </Link>
         </h3>
-        <ThemeToggler>
+        {/* <ThemeToggler>
           {({ theme, toggleTheme }) => (
             <label
               style={{
@@ -85,7 +93,7 @@ const Layout = (props: any) => {
               <span className="slider round" />
             </label>
           )}
-        </ThemeToggler>
+        </ThemeToggler> */}
       </div>
     );
   }
