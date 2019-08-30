@@ -1,5 +1,11 @@
 ---
 title: Refining the Battlev Project
+tags:
+  - vue
+  - node
+  - javascript
+  - docker
+  - deployment
 date: 2019-03-24T09:48:56.716Z
 description: >-
   Hello again, in this short blog post I will be sharing about my thoughts on
