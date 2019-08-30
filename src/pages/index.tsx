@@ -29,6 +29,7 @@ const BlogIndex = (props: any) => {
               </Link>
             </h3>
             <small>{node.frontmatter.date}</small>
+            <small>{node.frontmatter.tags}</small>
             <p
               dangerouslySetInnerHTML={{
                 __html: node.frontmatter.description || node.excerpt,
@@ -63,6 +64,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
+            tags
             description
             date(formatString: "MMMM DD, YYYY")
           }
