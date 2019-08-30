@@ -1,5 +1,8 @@
 ---
 title: Server to server communication using Socket.io for Battlev
+tags:
+  - node
+  - ''
 date: 2019-04-19T09:51:03.101Z
 description: >-
   Back to back communication. So to bring you guys up to speed, I've set up the
