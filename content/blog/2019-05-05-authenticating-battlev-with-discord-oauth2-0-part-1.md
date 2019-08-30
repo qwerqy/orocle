@@ -1,5 +1,7 @@
 ---
 title: 'Authenticating Battlev with Discord OAuth2.0 [ Part 1 ]'
+tags:
+  - node
 date: 2019-04-02T09:49:46.051Z
 description: >-
   This is the first progress post on the Battlev project. I am about halfway
