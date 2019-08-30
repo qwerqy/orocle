@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Qwerqy Devblog.`,
     author: `Amin Roslan`,
-    description: `Qwerqy's Online Portfolio & Blog`,
+    description: `Amin Roslan's Dev Blog`,
     siteUrl: `https://qwerqy,dev`,
     social: {
-      twitter: `qwerqy_dev`,
+      twitter: `aminroslan__`,
       github: `qwerqy`,
     },
   },
@@ -58,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
     `gatsby-plugin-feed`,
@@ -84,5 +84,7 @@ module.exports = {
     },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-dark-mode`,
+    `gatsby-plugin-typescript`,
+    'gatsby-plugin-tslint',
   ],
-}
+};
