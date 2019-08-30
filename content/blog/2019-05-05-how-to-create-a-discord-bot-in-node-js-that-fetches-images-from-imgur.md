@@ -1,5 +1,8 @@
 ---
 title: How to create a Discord bot in Node.js that fetches images from Imgur
+tags:
+  - node
+  - ''
 date: 2019-02-16T09:44:59.730Z
 description: Learn how to create a Discord bot in Nodejs that fetches images from Imgur
 ---
