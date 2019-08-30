@@ -1,5 +1,7 @@
 ---
 title: Are you a builder or a developer?
+tags:
+  - development
 date: 2019-03-02T09:48:18.008Z
 description: >-
   While I was driving in my neighbourhood, a thought came across my mind. It's
