@@ -2,6 +2,10 @@
 title: >-
   Implementing SSR to a production React (CRA) product (Part 1: Setting up Babel
   Register & Override CRA script)
+tags:
+  - react
+  - javascript
+  - ''
 date: 2019-02-21T09:46:23.656Z
 description: >-
   There I was, trying to find out what the heck is SSR on google. I get server
