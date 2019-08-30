@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "firebase": "^6.5.0",
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-dark-mode": "^1.1.0",
@@ -33,6 +34,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-firebase": "^2.2.8",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typeface-merriweather": "0.0.72",
@@ -44,6 +46,7 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.9",
+    "dotenv": "^8.1.0",
     "gatsby-plugin-tslint": "0.0.2",
     "prettier": "^1.17.0",
     "tslint": "^5.19.0",

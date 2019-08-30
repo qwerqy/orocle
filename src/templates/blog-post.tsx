@@ -6,8 +6,27 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 import { TagsList, Tag } from '../components/tags';
+import { database } from '../../firebase';
+import { addPlat, getPlatAmount } from '../utils/platinumHandler';
 
 class BlogPostTemplate extends React.Component<any> {
+  state = {
+    amountOfPlats: 0,
+  };
+
+  async componentDidMount() {
+    this.setState({
+      amountOfPlats: await getPlatAmount(this.props.data.markdownRemark.id),
+    });
+  }
+
+  handleClick = async () => {
+    addPlat(this.props.data.markdownRemark.id);
+    this.setState({
+      amountOfPlats: await getPlatAmount(this.props.data.markdownRemark.id),
+    });
+  };
+
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
@@ -44,6 +63,8 @@ class BlogPostTemplate extends React.Component<any> {
           })}
         </TagsList>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <button onClick={this.handleClick}>Plat</button>
+        <div>{this.state.amountOfPlats}</div>
         <hr
           style={{
             marginBottom: rhythm(1),
