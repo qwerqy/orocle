@@ -1,4 +1,4 @@
-import { database } from '../../firebase';
+import { database, anonId } from '../../firebase';
 
 export const getPlatAmount = async bid => {
   const amount = await database.collection(bid).get();
@@ -7,5 +7,8 @@ export const getPlatAmount = async bid => {
 };
 
 export const addPlat = bid => {
-  database.collection(bid).add({});
+  database
+    .collection(bid)
+    .doc(anonId)
+    .set({});
 };

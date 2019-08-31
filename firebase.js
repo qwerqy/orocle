@@ -8,6 +8,8 @@ const config = {
   projectId: process.env.GATSBY_FIREBASE_PROJECT_ID,
 };
 
+export let anonId = null;
+
 firebase.initializeApp(config);
 firebase
   .auth()
@@ -19,6 +21,16 @@ firebase
 
     console.log(errorCode, errorMessage);
   });
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    const isAnonymous = user.isAnonymous;
+    const uid = user.uid;
+
+    anonId = uid;
+  }
+});
 
 export default firebase;
 
