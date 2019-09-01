@@ -26,18 +26,18 @@ body.dark {
   margin: 0 4px;
 }
 
-a {
-  color: var(--textLink);
-  transition: 0.5s;
-  text-decoration: underline;
-}
-
 #trophy-button {
   color: #e5e9f0;
 }
 
 #trophy-button:hover {
   color: #81a1c1;
+}
+
+a {
+  color: var(--textLink);
+  transition: 0.5s;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -58,4 +58,51 @@ h5 {
 
 .big-title {
   color: var(--bg);
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 1.5px solid var(--textNormal);
+  border-right: none;
+  padding: 5px;
+  outline: none;
+  color: #9dbfaf;
+  transition: 0.5s;
+}
+
+.search:hover .searchTerm {
+  border: 3px solid var(--textHover);
+  border-right: none;
+}
+
+.searchTerm:focus {
+  color: #2e3440;
+}
+
+.search:hover .searchButton {
+  border: 1px solid var(--textHover);
+  background: var(--textHover);
+}
+
+.searchButton {
+  width: 40px;
+  border: 1px solid var(--textNormal);
+  background: var(--textNormal);
+  text-align: center;
+  color: #eceff4;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  width: 100%;
 }

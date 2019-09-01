@@ -8,6 +8,7 @@ import { rhythm, scale } from '../utils/typography';
 import { TagsList, Tag } from '../components/tags';
 import { addPlat, getPlatAmount } from '../utils/platinumHandler';
 import PlatWidget from '../components/platWidget';
+import SearchForm from '../components/searchForm';
 
 class BlogPostTemplate extends React.Component<any> {
   state = {
@@ -39,6 +40,7 @@ class BlogPostTemplate extends React.Component<any> {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
+        <SearchForm />
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{

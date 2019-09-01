@@ -102,15 +102,15 @@ module.exports = {
           { name: 'url', store: true },
           { name: 'date', store: true },
         ],
-      },
-      resolvers: {
-        MarkdownRemark: {
-          title: node => node.frontmatter.title,
-          description: node => node.frontmatter.description,
-          tags: node => node.frontmatter.tags,
-          content: node => node.rawMarkdownBody,
-          url: node => node.fields.slug,
-          date: node => node.frontmatter.date,
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            description: node => node.frontmatter.description,
+            tags: node => node.frontmatter.tags,
+            content: node => node.rawMarkdownBody,
+            url: node => node.fields.slug,
+            date: node => node.frontmatter.date,
+          },
         },
       },
       filename: 'search_index.json',

@@ -12,7 +12,7 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import { rhythm } from '../utils/typography';
 import Social from './social';
 
-function Bio() {
+function Bio(props) {
   return (
     <StaticQuery
       query={bioQuery}
@@ -22,7 +22,7 @@ function Bio() {
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(2.5),
+              marginBottom: rhythm(1),
             }}
           >
             <div
@@ -51,14 +51,14 @@ function Bio() {
                   }}
                 />
                 <p style={{ marginBottom: '1rem' }}>
-                  Written by <strong>{author}</strong> who lives in Malaysia and
-                  is currently working as a Software Engineer over at{' '}
+                  Written by <strong>{author}</strong>, An Engineering Lead for
+                  Respondents Platform in{' '}
                   <strong>
                     <a href="https://vase.ai" target="_blank">
                       Vase.ai
                     </a>
                   </strong>
-                  .
+                  . He speaks about programming & development.
                 </p>
               </div>
               <div
@@ -68,7 +68,7 @@ function Bio() {
                   justifyContent: 'space-between',
                 }}
               >
-                <Social />
+                {props.showSocial && <Social />}
                 {/* <ThemeToggler>
                   {({ theme, toggleTheme }) => (
                     <label

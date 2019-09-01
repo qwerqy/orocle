@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, navigate } from 'gatsby';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -8,6 +8,7 @@ import { rhythm } from '../utils/typography';
 import { TagsList, Tag } from '../components/tags';
 import { getPlatAmount } from '../utils/platinumHandler';
 import { RingLoader } from 'react-spinners';
+import SearchForm from '../components/searchForm';
 
 const BlogIndex = (props: any) => {
   const { data, location } = props;
@@ -27,7 +28,8 @@ const BlogIndex = (props: any) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
-      <Bio />
+      <Bio showSocial />
+      <SearchForm />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         const { tags } = node.frontmatter;
@@ -77,7 +79,19 @@ const BlogIndex = (props: any) => {
               {tags.map((tag: string, i: number) => {
                 return (
                   <Tag key={i} _key={i} data={tags}>
-                    {tag}
+                    <a
+                      href="#"
+                      style={{
+                        color: 'inherit',
+                        textDecoration: 'none',
+                      }}
+                      onClick={e => {
+                        e.preventDefault();
+                        navigate(`/search?keywords=${encodeURIComponent(tag)}`);
+                      }}
+                    >
+                      {tag}
+                    </a>
                   </Tag>
                 );
               })}
