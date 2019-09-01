@@ -1,3 +1,2 @@
-// custom typefaces
-// import "typeface-montserrat"
-// import "typeface-arvo"
+import './src/styles/global.css';
+import './src/styles/toggle.css';

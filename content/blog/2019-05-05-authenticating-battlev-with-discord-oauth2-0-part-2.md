@@ -2,7 +2,6 @@
 title: 'Authenticating Battlev with Discord OAuth2.0 [Part 2]'
 tags:
   - node
-  - ''
 date: 2019-04-04T09:50:24.498Z
 description: >-
   Hello my fellow readers! I am back with exciting news! I managed to get the
@@ -10,6 +9,7 @@ description: >-
   was hard at first to be honest. It was actually the first time I'm
   implementing authentication on Nodejs based server. Thanks ...
 ---
+
 <p>Hello my fellow readers! I am back with exciting news!</p>
 
 <p>I managed to get the OAuth 2.0 <em>thing</em> working to log in into the dashboard of my project <strong>Battlev</strong>. It was hard at first to be honest. It was actually the first time I'm implementing authentication on a <strong>Nodejs-based</strong> server.</p>

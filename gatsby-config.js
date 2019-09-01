@@ -1,11 +1,16 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Qwerqy Devblog.`,
     author: `Amin Roslan`,
-    description: `Qwerqy's Online Portfolio & Blog`,
+    description: `Amin Roslan's Dev Blog`,
     siteUrl: `https://qwerqy,dev`,
     social: {
-      twitter: `qwerqy_dev`,
+      twitter: `aminroslan__`,
+      github: `qwerqy`,
     },
   },
   plugins: [
@@ -57,7 +62,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
     `gatsby-plugin-feed`,
@@ -82,5 +87,33 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-dark-mode`,
+    `gatsby-plugin-typescript`,
+    'gatsby-plugin-tslint',
+    {
+      resolve: 'gatsby-plugin-lunr',
+      options: {
+        languages: [{ name: 'en' }],
+        fields: [
+          { name: 'title', store: true, attributes: { boost: 20 } },
+          { name: 'tags', store: true, attributes: { boost: 5 } },
+          { name: 'description', store: true, attributes: { boost: 10 } },
+          { name: 'content' },
+          { name: 'url', store: true },
+          { name: 'date', store: true },
+        ],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            description: node => node.frontmatter.description,
+            tags: node => node.frontmatter.tags,
+            content: node => node.rawMarkdownBody,
+            url: node => node.fields.slug,
+            date: node => node.frontmatter.date,
+          },
+        },
+      },
+      filename: 'search_index.json',
+    },
   ],
-}
+};

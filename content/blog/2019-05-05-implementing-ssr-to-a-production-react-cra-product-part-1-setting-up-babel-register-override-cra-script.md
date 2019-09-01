@@ -5,7 +5,6 @@ title: >-
 tags:
   - react
   - javascript
-  - ''
 date: 2019-02-21T09:46:23.656Z
 description: >-
   There I was, trying to find out what the heck is SSR on google. I get server
@@ -13,6 +12,7 @@ description: >-
   Rails do, but what do you mean with React? Isn't React already good enough?
   Turns out I was wrong. So I started studying ...
 ---
+
 <p>There I was, trying to find out what the heck is <strong>SSR</strong> on google. I get server-side rendering, that's <strong>basically what backend frameworks like Laravel and Rails do</strong>, but what do you mean with React? <em>Isn't React already good enough?</em></p>
 
 <p>Turns out I was wrong. So I started studying and researching about it. Guides after guides. Finally, I got a bit of a grasp on what it is.&nbsp;</p>

@@ -1,11 +1,11 @@
 import Typography from "typography"
 import grandViewTheme from "typography-theme-grand-view"
 
-grandViewTheme.overrideThemeStyles = () => ({
-  a: {
-    color: "#00b0ff",
-  },
-})
+// grandViewTheme.overrideThemeStyles = () => ({
+//   a: {
+//     color: "#00b0ff",
+//   },
+// })
 
 const typography = new Typography(grandViewTheme)
 

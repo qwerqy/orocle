@@ -2,10 +2,10 @@
 title: How to create a Discord bot in Node.js that fetches images from Imgur
 tags:
   - node
-  - ''
 date: 2019-02-16T09:44:59.730Z
 description: Learn how to create a Discord bot in Nodejs that fetches images from Imgur
 ---
+
 <p>It's the weekend now and I just got back from a Chinese New Year party. I always thought of building my own Discord bot and have it in my Discord channel where it's convenient for us to request anything from it. I know there are <g class="gr_ gr_110 gr-alert gr_spell gr_inline_cards gr_run\_anim ContextualSpelling ins-del multiReplace" id="110" data-gr-id="110">alot</g> <g class="gr\_ gr_117 gr-alert gr_gramm gr_inline_cards gr_run\_anim Grammar replaceWithoutSep" id="117" data-gr-id="117">more</g> better Discord bots out there, <g class="gr\_ gr_118 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="118" data-gr-id="118">however</g> I just felt having a bot that is built personally by me. It's like having my own child!</p>
 
 <p>For the finished <g class="gr_ gr_111 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="111" data-gr-id="111">project</g> you can head over to this <a href="https://github.com/qwerqy/battlev-discord-bot" target="_blank" rel="noopener"><g class="gr_ gr_103 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="103" data-gr-id="103">github</g> repo</a>.&nbsp;</p>
