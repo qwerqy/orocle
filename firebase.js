@@ -24,8 +24,6 @@ firebase
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // User is signed in.
-    const isAnonymous = user.isAnonymous;
     const uid = user.uid;
 
     anonId = uid;

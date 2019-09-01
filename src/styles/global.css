@@ -32,6 +32,14 @@ a {
   text-decoration: underline;
 }
 
+#trophy-button {
+  color: #e5e9f0;
+}
+
+#trophy-button:hover {
+  color: #81a1c1;
+}
+
 a:hover {
   color: var(--textHover);
 }

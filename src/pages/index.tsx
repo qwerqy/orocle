@@ -6,11 +6,23 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 import { TagsList, Tag } from '../components/tags';
+import { getPlatAmount } from '../utils/platinumHandler';
+import { RingLoader } from 'react-spinners';
 
 const BlogIndex = (props: any) => {
   const { data, location } = props;
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
+  const [, updateState] = React.useState();
+  const [isLoading, updateIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    posts.map(async ({ node }) => {
+      node.plats = await getPlatAmount(node.id);
+      updateIsLoading(false);
+      updateState({});
+    });
+  }, []);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -19,6 +31,8 @@ const BlogIndex = (props: any) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         const { tags } = node.frontmatter;
+
+        console.log(node.plats);
         return (
           <div key={node.fields.slug}>
             <h3
@@ -33,8 +47,32 @@ const BlogIndex = (props: any) => {
                 {title}
               </Link>
             </h3>
-            <div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
               <small>{node.frontmatter.date}</small>
+              <i
+                style={{
+                  fontSize: '1rem',
+                  marginLeft: '10px',
+                  color: '#81A1C1',
+                }}
+                className={`fas fa-trophy icon-buffer`}
+              />
+              {isLoading ? (
+                <RingLoader
+                  sizeUnit={'px'}
+                  size={15}
+                  color={'#81A1C1'}
+                  loading={true}
+                />
+              ) : (
+                <span style={{ color: '#81A1C1' }}>{node.plats}</span>
+              )}
             </div>
             <TagsList>
               {tags.map((tag: string, i: number) => {

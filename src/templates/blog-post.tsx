@@ -8,6 +8,7 @@ import { rhythm, scale } from '../utils/typography';
 import { TagsList, Tag } from '../components/tags';
 import { database } from '../../firebase';
 import { addPlat, getPlatAmount } from '../utils/platinumHandler';
+import PlatWidget from '../components/platWidget';
 
 class BlogPostTemplate extends React.Component<any> {
   state = {
@@ -20,7 +21,8 @@ class BlogPostTemplate extends React.Component<any> {
     });
   }
 
-  handleClick = async () => {
+  handleClick = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
     addPlat(this.props.data.markdownRemark.id);
     this.setState({
       amountOfPlats: await getPlatAmount(this.props.data.markdownRemark.id),
@@ -63,15 +65,16 @@ class BlogPostTemplate extends React.Component<any> {
           })}
         </TagsList>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <button onClick={this.handleClick}>Plat</button>
-        <div>{this.state.amountOfPlats}</div>
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
+        <PlatWidget
+          amountOfPlats={this.state.amountOfPlats}
+          onClick={this.handleClick}
+        />
         <Bio />
-
         <ul
           style={{
             display: `flex`,
