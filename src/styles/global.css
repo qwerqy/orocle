@@ -100,7 +100,7 @@ h5 {
 }
 
 .searchButton {
-  width: 40px;
+  /* width: 40px; */
   border: 1px solid var(--textNormal);
   background: var(--textNormal);
   text-align: center;
