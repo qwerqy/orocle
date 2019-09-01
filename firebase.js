@@ -7,29 +7,14 @@ const config = {
   authDomain: process.env.GATSBY_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.GATSBY_FIREBASE_PROJECT_ID,
 };
-
-export let anonId = null;
-
-firebase.initializeApp(config);
-firebase
-  .auth()
-  .signInAnonymously()
-  .catch(function(error) {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-
-    console.log(errorCode, errorMessage);
-  });
-
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    const uid = user.uid;
-
-    anonId = uid;
+class Firebase {
+  constructor() {
+    if (typeof window !== 'undefined') {
+      firebase.initializeApp(config);
+      this.auth = firebase.auth();
+      this.firestore = firebase.firestore();
+    }
   }
-});
+}
 
-export default firebase;
-
-export const database = firebase.firestore();
+export default new Firebase();

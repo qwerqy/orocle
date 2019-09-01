@@ -32,7 +32,6 @@ const BlogIndex = (props: any) => {
         const title = node.frontmatter.title || node.fields.slug;
         const { tags } = node.frontmatter;
 
-        console.log(node.plats);
         return (
           <div key={node.fields.slug}>
             <h3

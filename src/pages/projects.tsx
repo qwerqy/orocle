@@ -7,12 +7,12 @@ import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
 const BlogIndex = (props: any) => {
-  const { data } = this.props;
+  const { data } = props;
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout location={this.props.location} title={siteTitle}>
+    <Layout location={props.location} title={siteTitle}>
       <SEO
         title="Projects"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}

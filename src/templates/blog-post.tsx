@@ -6,7 +6,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
 import { TagsList, Tag } from '../components/tags';
-import { database } from '../../firebase';
 import { addPlat, getPlatAmount } from '../utils/platinumHandler';
 import PlatWidget from '../components/platWidget';
 
@@ -56,13 +55,14 @@ class BlogPostTemplate extends React.Component<any> {
             marginBottom: '1rem',
           }}
         >
-          {post.frontmatter.tags.map((tag: string, i: number) => {
-            return (
-              <Tag key={i} _key={i} data={post.frontmatter.tags}>
-                {tag}
-              </Tag>
-            );
-          })}
+          {post.frontmatter.tags &&
+            post.frontmatter.tags.map((tag: string, i: number) => {
+              return (
+                <Tag key={i} _key={i} data={post.frontmatter.tags}>
+                  {tag}
+                </Tag>
+              );
+            })}
         </TagsList>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
