@@ -22,7 +22,7 @@ export const Tag = (props: any) => {
         style={{
           display: 'inline-block',
           padding: '5px 8px',
-          margin: '0 5px',
+          margin: '5px 5px',
           borderRadius: '5px',
           marginLeft: props._key === 0 ? '0' : '5px',
           marginRight: props._key === props.data.length - 1 ? '0' : '5px',
