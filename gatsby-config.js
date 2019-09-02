@@ -101,6 +101,7 @@ module.exports = {
           { name: 'content' },
           { name: 'url', store: true },
           { name: 'date', store: true },
+          { name: 'id', store: true },
         ],
         resolvers: {
           MarkdownRemark: {
@@ -110,6 +111,7 @@ module.exports = {
             content: node => node.rawMarkdownBody,
             url: node => node.fields.slug,
             date: node => node.frontmatter.date,
+            id: node => node.id,
           },
         },
       },

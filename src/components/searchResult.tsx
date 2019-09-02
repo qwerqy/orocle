@@ -8,13 +8,15 @@ import Moment from 'react-moment';
 
 const SearchResults = (props: any) => {
   const [isLoading, updateIsLoading] = React.useState(true);
+  const [, updateState] = React.useState();
 
   React.useEffect(() => {
-    props.results.map(async ({ node }) => {
+    props.results.map(async node => {
       node.plats = await getPlatAmount(node.id);
       updateIsLoading(false);
+      updateState({});
     });
-  }, []);
+  }, [props.results]);
 
   return (
     <section aria-label="Search results for all posts">
