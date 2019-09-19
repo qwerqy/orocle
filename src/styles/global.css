@@ -10,7 +10,7 @@ body.light {
   background-color: var(--bg);
 }
 
-body.dark {
+/* body.dark {
   -webkit-font-smoothing: antialiased;
 
   --bg: #2e3440;
@@ -20,7 +20,7 @@ body.dark {
   --textHover: #5e81ac;
   --toggle: white;
   --hr: hsla(0, 0%, 100%, 0.2);
-}
+} */
 
 .icon-buffer {
   margin: 0 4px;
