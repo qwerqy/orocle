@@ -116,8 +116,15 @@ const Layout = (props: any) => {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          <Social />© {new Date().getFullYear()}, Built with blood and sweat
-          from my fingers.
+          <Social />
+          <a href="https://aminroslan.com" target="_blank">
+            aminroslan.com
+          </a>
+          <br />
+          <span>
+            © {new Date().getFullYear()}, Built with blood and sweat from my
+            fingers.
+          </span>
         </footer>
       </div>
     </div>
