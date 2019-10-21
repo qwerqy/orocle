@@ -67,6 +67,31 @@ class BlogPostTemplate extends React.Component<any> {
             })}
         </TagsList>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <span>Share this post: </span>
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+              this.props.location.href,
+            )}`}
+            style={{ margin: '0 1rem' }}
+          >
+            Facebook
+          </a>
+          <a
+            href={`https://twitter.com/share?url=${encodeURIComponent(
+              this.props.location.href,
+            )}`}
+            style={{ margin: '0 1rem' }}
+          >
+            Twitter
+          </a>
+        </div>
         <hr
           style={{
             marginBottom: rhythm(1),

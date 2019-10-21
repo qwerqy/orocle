@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 
 import { rhythm, scale } from '../utils/typography';
 import Social from './social';
@@ -17,19 +16,22 @@ const Layout = (props: any) => {
         style={{
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'space-between',
+          justifyContent: 'start',
+          alignItems: 'center',
         }}
       >
+        <img
+          src="https://raw.githubusercontent.com/matchilling/gatsby-remark-emojis/master/resource/image/32/notebook.png"
+          style={{
+            ...scale(1.8),
+          }}
+        />
         <h1
           className={'big-title'}
           style={{
-            ...scale(1.8),
-            marginBottom: rhythm(1.5),
+            marginLeft: '1rem',
             marginTop: 0,
-            fontFamily: `Playfair Display, serif`,
             letterSpacing: '3px',
-            textShadow:
-              '-1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000',
           }}
         >
           <Link
@@ -51,17 +53,18 @@ const Layout = (props: any) => {
         style={{
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'space-between',
+          justifyContent: 'start',
+          alignItems: 'center',
         }}
       >
+        <img src="https://raw.githubusercontent.com/matchilling/gatsby-remark-emojis/master/resource/image/32/notebook.png" />
         <h3
           className={'big-title'}
           style={{
-            fontFamily: `Playfair Display, serif`,
+            // fontFamily: `Playfair Display, serif`,
+            marginLeft: '1rem',
             marginTop: 0,
             letterSpacing: '3px',
-            textShadow:
-              '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
           }}
         >
           <Link
@@ -75,25 +78,6 @@ const Layout = (props: any) => {
             {title}
           </Link>
         </h3>
-        {/* <ThemeToggler>
-          {({ theme, toggleTheme }) => (
-            <label
-              style={{
-                marginBottom: rhythm(1.5),
-                display: 'flex',
-                alignSelf: 'center',
-              }}
-              className="switch"
-            >
-              <input
-                type="checkbox"
-                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-                checked={theme === 'dark'}
-              />
-              <span className="slider round" />
-            </label>
-          )}
-        </ThemeToggler> */}
       </div>
     );
   }

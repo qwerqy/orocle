@@ -75,7 +75,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/Q.png`,
+        icon: `content/assets/notebook.png`,
       },
     },
     `gatsby-plugin-offline`,
@@ -87,7 +87,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-dark-mode`,
     `gatsby-plugin-typescript`,
     'gatsby-plugin-tslint',
     {
