@@ -45,6 +45,8 @@
     "typeface-montserrat": "0.0.54",
     "typeface-playfair-display": "0.0.72",
     "typography": "^0.16.19",
+    "typography-plugin-code": "^0.16.19",
+    "typography-theme-doelger": "^0.16.19",
     "typography-theme-grand-view": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19"
   },

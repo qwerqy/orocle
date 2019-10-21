@@ -1,19 +1,26 @@
-import Typography from "typography"
-import grandViewTheme from "typography-theme-grand-view"
+import Typography from 'typography';
+import Doelger from 'typography-theme-doelger';
+import CodePlugin from 'typography-plugin-code';
 
-// grandViewTheme.overrideThemeStyles = () => ({
-//   a: {
-//     color: "#00b0ff",
-//   },
-// })
+Doelger.plugins = [new CodePlugin()];
 
-const typography = new Typography(grandViewTheme)
+Doelger.overrideThemeStyles = () => ({
+  a: {
+    backgroundImage: '',
+    textShadow: '',
+  },
+});
+
+Doelger.baseFontSize = '18px';
+Doelger.baseLineHeight = '1.8';
+
+const typography = new Typography(Doelger);
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
-  typography.injectStyles()
+  typography.injectStyles();
 }
 
-export default typography
-export const rhythm = typography.rhythm
-export const scale = typography.scale
+export default typography;
+export const rhythm = typography.rhythm;
+export const scale = typography.scale;

@@ -1,7 +1,7 @@
 body {
   --bg: #eceff4;
-  --textNormal: #2e3440;
-  --textTitle: #2e3440;
+  --textNormal: #4c566a;
+  --textTitle: #3b4252;
   --textLink: #2e3440;
   --textHover: #88c0d0;
   --toggle: #88c0d0;
@@ -22,6 +22,14 @@ body {
   --hr: hsla(0, 0%, 100%, 0.2);
 } */
 
+pre {
+  background: #d8dee9;
+}
+
+code {
+  background-color: #d8dee9;
+}
+
 .icon-buffer {
   margin: 0 4px;
 }
@@ -36,7 +44,7 @@ body {
 
 a {
   color: var(--textLink);
-  transition: 0.5s;
+  transition: 0.2s;
   text-decoration: underline;
 }
 

@@ -37,7 +37,7 @@ function Bio(props) {
                   flexDirection: `row`,
                 }}
               >
-                <Image
+                {/* <Image
                   fixed={data.avatar.childImageSharp.fixed}
                   alt={author}
                   style={{
@@ -49,16 +49,16 @@ function Bio(props) {
                   imgStyle={{
                     borderRadius: `50%`,
                   }}
-                />
+                /> */}
                 <p style={{ marginBottom: '1rem' }}>
-                  Written by <strong>{author}</strong>, An Engineering Lead for
+                  🙋🏻‍♂️ I'm <strong>{author}</strong>, An Engineering Lead for
                   Respondents Platform in{' '}
                   <strong>
                     <a href="https://vase.ai" target="_blank">
                       Vase.ai
                     </a>
                   </strong>
-                  . He speaks about programming & development.
+                  . I write stuff about software & tech. 💻
                 </p>
               </div>
               <div
