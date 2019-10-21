@@ -20,16 +20,9 @@ const Layout = (props: any) => {
           alignItems: 'center',
         }}
       >
-        <img
-          src="https://raw.githubusercontent.com/matchilling/gatsby-remark-emojis/master/resource/image/32/notebook.png"
-          style={{
-            ...scale(1.8),
-          }}
-        />
         <h1
           className={'big-title'}
           style={{
-            marginLeft: '1rem',
             marginTop: 0,
             letterSpacing: '3px',
           }}
@@ -42,7 +35,7 @@ const Layout = (props: any) => {
             }}
             to={`/`}
           >
-            {title}
+            📓 {title}
           </Link>
         </h1>
       </div>
@@ -57,12 +50,9 @@ const Layout = (props: any) => {
           alignItems: 'center',
         }}
       >
-        <img src="https://raw.githubusercontent.com/matchilling/gatsby-remark-emojis/master/resource/image/32/notebook.png" />
         <h3
           className={'big-title'}
           style={{
-            // fontFamily: `Playfair Display, serif`,
-            marginLeft: '1rem',
             marginTop: 0,
             letterSpacing: '3px',
           }}
@@ -75,7 +65,7 @@ const Layout = (props: any) => {
             }}
             to={`/`}
           >
-            {title}
+            📓 {title}
           </Link>
         </h3>
       </div>
@@ -99,6 +89,7 @@ const Layout = (props: any) => {
       >
         <header>{header}</header>
         <main>{children}</main>
+        <br />
         <footer>
           <Social />
           <a href="https://aminroslan.com" target="_blank">
@@ -106,8 +97,7 @@ const Layout = (props: any) => {
           </a>
           <br />
           <span>
-            © {new Date().getFullYear()}, Built with blood and sweat from my
-            fingers.
+            © {new Date().getFullYear()}, Built with 💉 and 💦 from my fingers.
           </span>
         </footer>
       </div>

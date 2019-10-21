@@ -41,7 +41,8 @@ class BlogPostTemplate extends React.Component<any> {
           description={post.frontmatter.description || post.excerpt}
         />
         <SearchForm />
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{post.frontmatter.title} 📝</h1>
+        <br />
         <p
           style={{
             ...scale(-1 / 5),
@@ -50,7 +51,7 @@ class BlogPostTemplate extends React.Component<any> {
             marginBottom: 0,
           }}
         >
-          {post.frontmatter.date}
+          {post.frontmatter.date} 📅
         </p>
         <TagsList
           style={{
